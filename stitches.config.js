@@ -200,7 +200,10 @@ export const {
       6: '21px',
       7: '27px',
       8: '35px',
-      9: '59px',
+      9: '45px',
+      10: '55px',
+      11: '65px',
+      12: '75px',
     },
     fonts: {},
     fontWeights: {
@@ -336,6 +339,7 @@ export const globalStyles = globalCss({
   '*': {
     margin: 0,
     padding: 0,
+    outline: 0,
     boxSizing: 'border-box',
   },
   'body': {
