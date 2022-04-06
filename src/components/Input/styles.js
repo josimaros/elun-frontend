@@ -19,7 +19,7 @@ export const ContainerInput = styled('div', {
   flexDirection: 'row',
   alignItems: 'center',
   backgroundColor: '$gray1',
-  padding: '$1 $2',
+  padding: '0 $2',
   borderRadius: '$2',
   borderWidth: '1px',
   borderStyle: 'solid',

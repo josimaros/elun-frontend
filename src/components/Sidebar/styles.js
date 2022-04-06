@@ -1,8 +1,8 @@
 import { styled, theme } from '../../../stitches.config'
 
 export const Container = styled('div', {
-  background:'transparent',
   transition: 'all .6s',
+  marginTop:'-55px',
   width: '240px',
   height: '100vh',
   marginLeft: '-240px',
@@ -14,13 +14,10 @@ export const Container = styled('div', {
 })
 export const SidebarWrapper = styled('div', {
   width: '240px',
-  height: '100vh',
-  // position: 'fixed',
-  top: 0,
-  bottom: 0,
+  height: '100%',
   borderRight: '1px solid $sand4',
   boxShadow: `0 0 10px ${theme.colors.sand3}`,
-  transition: 'all 1.5s ease-out',
+  transition: 'all 0.6s ease-out',
 })
 
 export const SidebarHeader = styled('div', {
@@ -82,6 +79,8 @@ export const SidebarMenu = styled('div', {
       'div.accordion-body': {
         'ul.list-group': {
           background: '$gray1',
+          'a':{
+            textDecoration:'none',
           'li.list-group-item': {
             border: 0,
             cursor: 'pointer',
@@ -96,6 +95,7 @@ export const SidebarMenu = styled('div', {
               fontweight: 'bold'
             }
           }
+        },
         }
       }
     }

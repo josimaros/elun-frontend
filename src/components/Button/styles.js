@@ -24,6 +24,11 @@ export const Container = styled('button', {
   borderRadius: '$1',
   transition: 'color 0.15s ease-in -out, background - color 0.15s ease -in -out, border - color 0.15s ease -in -out, box - shadow 0.15s ease -in -out',
   variants: {
+    none:{
+      true: {
+        padding:0,
+      }
+    },
     block:{
       true:{
         display: 'block',

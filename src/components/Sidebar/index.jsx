@@ -20,8 +20,8 @@ function Sidebar() {
           <div className="accordion" id="accordionExample">
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingOne">
-                <Link to="/" className="accordion-button" >
-                  Produtos
+                <Link to="/dashboard" className="accordion-button" >
+                  Dashboard
                 </Link>
               </h2>
             </div>
@@ -34,8 +34,8 @@ function Sidebar() {
               <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div className="accordion-body">
                   <ul className="list-group">
-                    <li className="list-group-item"><Link to="/" />Produto</li>
-                    <li className="list-group-item"><Link to="/" />Categoria</li>
+                  <Link to="/products"><li className="list-group-item">Produto</li></Link>
+                  <Link to="/categories"><li className="list-group-item">Categoria</li></Link>
                   </ul>
                 </div>
               </div>
@@ -75,7 +75,6 @@ function Sidebar() {
 
         </SidebarMenu>
       </SidebarWrapper>
-      1
     </Container>
   )
 }

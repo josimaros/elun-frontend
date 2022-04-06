@@ -1,17 +1,13 @@
 import React from 'react';
-import Sidebar from '../../components/Sidebar';
-import HeaderContent from '../../components/HeaderContent';
-import { Container,Content } from './styles';
+import { Container } from './styles';
+import Layout from '../Layout';
 
 function Dashboard() {
   
   return (
-    <Container>
-      <Sidebar />
-      <Content >
-        <HeaderContent />
-      </Content>
-    </Container>
+    <Layout>
+      dashboard 2
+    </Layout>
   )
 }
 

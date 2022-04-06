@@ -4,7 +4,7 @@ import { useField } from '@unform/core'
 import { Container, InputCustom, ContainerInput } from './styles'
 import { theme } from '../../../stitches.config'
 
-export default function Input({ name, label, Icon,...rest }) {
+export default function Input({ name, className, label, placeholder, Icon, ...rest }) {
   const inputRef = useRef(null)
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
@@ -36,16 +36,16 @@ export default function Input({ name, label, Icon,...rest }) {
   }, []);
 
   return (
-    <Container >
+    <Container {...rest} className={className}>
       {label && <label htmlFor={fieldName}>{label}</label>}
       <ContainerInput className='container-input' isFocused={isFocused} isFilled={isFilled}>
-      {Icon && <Icon size={16} color={theme.colors.gray10} style={{marginRight:theme.sizes[2]}} />}
-        <InputCustom 
-        ref={inputRef} 
-        defaultValue={defaultValue} 
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        {...rest}
+        {Icon && <Icon size={16} color={theme.colors.gray10} style={{ marginRight: theme.sizes[2] }} />}
+        <InputCustom
+          ref={inputRef}
+          defaultValue={defaultValue}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
+          placeholder={placeholder}
         />
       </ContainerInput>
     </Container>

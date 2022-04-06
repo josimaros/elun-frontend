@@ -6,6 +6,7 @@ export const Container = styled('div',{
   justifyContent:'space-between',
   width:'$full',
   padding:'$3',
+  marginBottom:'$5',
 })
 
 export const ContainerNotifications = styled('div',{
