@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Register from './pages/Register'
 import Produtos from './pages/Produtos'
+import Category from './pages/Category'
 
 function App() {
   const [useTheme,setUseTheme] = useState('theme-default')
@@ -19,7 +20,7 @@ function App() {
         <Route path='/'>
           <Route index element={<Login />} />
           <Route path='products' element={<Produtos />} />
-          <Route path='categories' element={<Produtos />} />
+          <Route path='categories' element={<Category />} />
           <Route path='register' element={<Register />} />
           <Route path='dashboard' element={<Dashboard />} />
         </Route>

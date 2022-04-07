@@ -43,7 +43,7 @@ function Produtos() {
             </Row>
             <Row>
               <Col md={{span: 3, offset:9}} sm={12}>
-              <Button color="primary" block type="submit">Salvar</Button>
+              <Button color="primary" block type="submit">Cadastrar</Button>
               </Col>
             </Row>
 

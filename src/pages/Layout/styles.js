@@ -16,6 +16,6 @@ export const Content = styled('div',{
   alignItems:'flex-start',
   justifyContent:'flex-start',
   minHeight:'100vh',
-  background:'$gray4',
+  background:'$sand4',
   padding:'$3'
 })

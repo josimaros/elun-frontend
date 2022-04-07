@@ -2,7 +2,6 @@ import { styled, theme } from '../../../stitches.config'
 
 export const Container = styled('div', {
   transition: 'all .6s',
-  marginTop:'-55px',
   width: '240px',
   height: '100vh',
   marginLeft: '-240px',
