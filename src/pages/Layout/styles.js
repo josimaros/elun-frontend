@@ -17,5 +17,5 @@ export const Content = styled('div',{
   justifyContent:'flex-start',
   minHeight:'100vh',
   background:'$sand4',
-  padding:'$3'
+  padding:'$1'
 })

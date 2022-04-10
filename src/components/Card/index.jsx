@@ -6,6 +6,7 @@ const Container = styled('div', {
   padding: '$3',
   borderRadius: '$1',
   transition: 'all 0.6s ease-out',
+  boxShadow: `-8px 12px 18px 0 ${theme.colors.gray8}`,
 })
 
 function Card({ children, shadowColor, css, ...rest }) {
