@@ -66,7 +66,7 @@ function Sales({ data }) {
         <Col md={7} sm={12}>
           <div>
             <BarChart
-              width={sidebarConfig.isOpen ? 215 : 295}//215 - 295
+              width={sidebarConfig.isOpen ? 260 : 350}//215 - 295
               height={150}
               data={dataChart}
               style={{ transition: 'all 0.6s ease-out' }}
