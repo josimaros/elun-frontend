@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { theme, styled } from '../../../../stitches.config'
 import { Col } from 'react-bootstrap'
 import Card from '../../Card'
-import {useSidebar} from '../../../providers/sideBarContext'
+import { useSidebar } from '../../../providers/sideBarContext'
 import {
   BarChart,
+  LineChart,
+  Line,
   Bar,
   Cell,
   XAxis,
@@ -15,8 +17,11 @@ import {
   ReferenceLine,
   ResponsiveContainer,
 } from 'recharts';
+import closestIndexTo from 'date-fns/esm/fp/closestIndexTo/index'
 
 const Header = styled('div', {
+  color: theme.colors.blue1,
+  marginLeft: '$3',
   '& h3': {
     marginBottom: 0
   },
@@ -24,6 +29,18 @@ const Header = styled('div', {
     marginBottom: '$1'
   }
 })
+const Content = styled('div', {
+  background: `linear-gradient(${theme.colors.blue9}, ${theme.colors.blue7})`,
+  borderRadius: '$1',
+})
+
+const TooltipCustom = ({ ...rest }) => {
+  return (
+    <div>
+      12
+    </div>
+  )
+}
 
 function Balance({ title, data }) {
   const { sidebarConfig, setSidebarConfig } = useSidebar()
@@ -39,18 +56,61 @@ function Balance({ title, data }) {
 
   return (
     <Col sm={12} md={4}>
-      <Card style={{ padding: 5 }}>
-        <Header>
-          <h3>{title}</h3>
-          <p>Ultimos 7 dias</p>
-        </Header>
-        {/* <ResponsiveContainer> */}
-        <BarChart
+      <Content>
+        <Card style={{ padding: 5, background: 'transparent' }}>
+          <Header>
+            <h3>{title}</h3>
+            <p>Ultimos 7 dias</p>
+          </Header>
+          {/* <ResponsiveContainer> */}
+          <LineChart
+            width={sidebarConfig.isOpen ? 215 : 295}
+            height={100} data={dataChart}>
+            <Tooltip
+              wrapperStyle={{ color: theme.colors.blue12 }}
+              contentStyle={{
+                background: theme.colors.gray1,
+                borderRadius: theme.radii[3],
+                color: theme.colors.gray12,
+              }}
+              labelStyle={{
+                color: theme.colors.gray12,
+              }}
+              itemStyle={{
+                color: theme.colors.gray12,
+              }}
+              formatter={(value, name, props) => [
+                value,`R$`,
+              ]}
+              labelFormatter={(value, name, props) => dataChart[value].name}
+            />
+
+            <Line
+              type="natural"
+              dataKey="value"
+              stroke={theme.colors.blue1}
+              dot={false}
+              strokeWidth={2}
+
+            />
+          </LineChart>
+          {/* </ResponsiveContainer> */}
+        </Card>
+      </Content>
+    </Col>
+  );
+}
+
+export default Balance;
+
+
+{/* <LineChart
           width={sidebarConfig.isOpen ? 215 : 295}//215 - 295
           height={150}
           data={dataChart}
           style={{transition: 'all 0.6s ease-out'}}
         >
+          <YAxis dataKey="name" />
           <XAxis dataKey="name" />
           <Tooltip />
           <ReferenceLine y={0} stroke={theme.colors.grass12} />
@@ -60,11 +120,4 @@ function Balance({ title, data }) {
               )
             )}
           </Bar>
-        </BarChart>
-        {/* </ResponsiveContainer> */}
-      </Card>
-    </Col>
-  );
-}
-
-export default Balance;
+        </LineChart> */}

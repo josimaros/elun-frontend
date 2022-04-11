@@ -32,18 +32,18 @@ function Sales({ data }) {
     { name: novaData.setDate(5), value: 3490 },
   ])
   function setColorChart(entry) {
-    let color = theme.colors.blue7
+    let color = theme.colors.blue8
     if (entry.value > 0 && new Date(entry.name).getDate() === new Date().getDate()) {
       color = theme.colors.blue9
     }
     if (entry.value > 0 && new Date(entry.name).getDate() !== new Date().getDate()) {
-      color = theme.colors.blue7
+      color = theme.colors.blue8
     }
     if (entry.value < 0 && new Date(entry.name).getDate() === new Date().getDate()) {
       color = theme.colors.red9
     }
     if (entry.value < 0 && new Date(entry.name).getDate() !== new Date().getDate()) {
-      color = theme.colors.red7
+      color = theme.colors.red8
     }
 
     return color
@@ -66,7 +66,7 @@ function Sales({ data }) {
         <Col md={7} sm={12}>
           <div>
             <BarChart
-              width={sidebarConfig.isOpen ? 260 : 350}//215 - 295
+              width={sidebarConfig.isOpen ? 270 : 360}//215 - 295
               height={150}
               data={dataChart}
               style={{ transition: 'all 0.6s ease-out' }}

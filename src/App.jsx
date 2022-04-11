@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {theme,darkTheme, globalStyles} from '../stitches.config'
 import { Routes, Route } from 'react-router-dom'
+import {useTheme} from './providers/themeContext'
 
 //IMPORTS PAGES
 import Login from './pages/Login'
@@ -10,12 +11,12 @@ import Produtos from './pages/Produtos'
 import Category from './pages/Category'
 
 function App() {
-  const [useTheme,setUseTheme] = useState('theme-default')
+  const {isDark,setIsDark} = useTheme();
 
   globalStyles()
 
   return (
-    <div className={['App'].join(' ')}>
+    <div className={['App', isDark && darkTheme].join(' ')}>
       <Routes>
         <Route path='/'>
           <Route index element={<Login />} />

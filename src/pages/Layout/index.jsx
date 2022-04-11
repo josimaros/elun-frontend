@@ -1,17 +1,20 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar';
 import HeaderContent from '../../components/HeaderContent';
-import { Container, Content } from './styles';
+import { ContainerCustom, Content } from './styles';
+import { Container } from 'react-bootstrap';
 
 function Layout({children}) {
   return (
-    <Container>
+    <ContainerCustom>
       <Sidebar />
       <Content >
         <HeaderContent />
+        <Container fluid>
         {children}
+        </Container>
       </Content>
-    </Container>
+    </ContainerCustom>
   )
 }
 

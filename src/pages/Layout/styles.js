@@ -1,6 +1,6 @@
 import {styled} from '../../../stitches.config'
 
-export const Container = styled('div',{
+export const ContainerCustom = styled('div',{
   display:'row',  
   display:'flex',
   flex:1,
@@ -16,6 +16,6 @@ export const Content = styled('div',{
   alignItems:'flex-start',
   justifyContent:'flex-start',
   minHeight:'100vh',
-  background:'$sand4',
+  background:'$gray2',
   padding:'$1'
 })

@@ -341,11 +341,13 @@ export const globalStyles = globalCss({
     padding: 0,
     outline: 0,
     boxSizing: 'border-box',
+    transition: 'all 0.6s ease-out',
   },
   'body': {
     background: 'white',
     fontSize: '$3',
     lineHeight: '$normal',
     fontWeights: '$4',
+    transition: 'all 0.6s ease-out',
   }
 })
