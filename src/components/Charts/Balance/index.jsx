@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { theme, styled } from '../../../../stitches.config'
 import { Col } from 'react-bootstrap'
 import Card from '../../Card'
-import { useSidebar } from '../../../providers/sideBarContext'
 import {
   BarChart,
   LineChart,
@@ -17,7 +16,6 @@ import {
   ReferenceLine,
   ResponsiveContainer,
 } from 'recharts';
-import closestIndexTo from 'date-fns/esm/fp/closestIndexTo/index'
 
 const Header = styled('div', {
   color: theme.colors.blue1,
@@ -43,7 +41,6 @@ const TooltipCustom = ({ ...rest }) => {
 }
 
 function Balance({ title, data }) {
-  const { sidebarConfig, setSidebarConfig } = useSidebar()
   const [dataChart, setDataChart] = useState(data || [
     { name: '07/04', value: 4000 },
     { name: '06/04', value: 3000 },
@@ -55,7 +52,7 @@ function Balance({ title, data }) {
   ])
 
   return (
-    <Col sm={12} md={4}>
+    <Col sm={12} md={3}>
       <Content>
         <Card style={{ padding: 5, background: 'transparent' }}>
           <Header>
@@ -64,7 +61,7 @@ function Balance({ title, data }) {
           </Header>
           {/* <ResponsiveContainer> */}
           <LineChart
-            width={sidebarConfig.isOpen ? 215 : 295}
+            width={220}
             height={100} data={dataChart}>
             <Tooltip
               wrapperStyle={{ color: theme.colors.blue12 }}

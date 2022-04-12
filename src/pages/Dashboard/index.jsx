@@ -43,6 +43,7 @@ function Dashboard() {
       <Row>
         <ChartBalance title="Balanço" />
         <ChartBalance title="Receita" />
+        <ChartBalance title="Despesas" />
         <ChartBalance title="Pedidos" />
       </Row>
 

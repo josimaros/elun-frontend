@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard'
 import Register from './pages/Register'
 import Produtos from './pages/Produtos'
 import Category from './pages/Category'
+import BotMessages from './pages/Bot/Mensagens'
 
 function App() {
   const {isDark,setIsDark} = useTheme();
@@ -24,6 +25,9 @@ function App() {
           <Route path='categories' element={<Category />} />
           <Route path='register' element={<Register />} />
           <Route path='dashboard' element={<Dashboard />} />
+          <Route path="/bot">
+            <Route path='messages' element={<BotMessages />} />
+          </Route>
         </Route>
       </Routes>
     </div>

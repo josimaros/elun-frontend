@@ -343,6 +343,9 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
     transition: 'all 0.6s ease-out',
   },
+  'a': {
+    textDecoration: 'none',
+  },
   'body': {
     background: 'white',
     fontSize: '$3',

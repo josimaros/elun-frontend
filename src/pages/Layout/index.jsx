@@ -7,7 +7,6 @@ import { Container } from 'react-bootstrap';
 function Layout({children}) {
   return (
     <ContainerCustom>
-      <Sidebar />
       <Content >
         <HeaderContent />
         <Container fluid>
